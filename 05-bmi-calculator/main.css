@@ -1,0 +1,86 @@
+.btn {
+  width: 148px;
+  height: 48px;
+  background-color: #2699fb;
+  color: #fff;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.btn:active {
+  background-color: #007feb;
+}
+
+.inp {
+  width: 204px;
+  height: 48px;
+  border: 1px solid #48aeff;
+  color: #48aeff;
+  font-size: 14px;
+  /* font-weight: bold; */
+  /* outline: none; */
+  box-sizing: border-box;
+  border-radius: 2px;
+  padding: 0 20px;
+  border-radius: 4px;
+}
+
+.inp::placeholder {
+  color: #94d0ff;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-end;
+}
+
+.form-inp {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-inp label {
+  font-size: 12px;
+  color: #48aeff;
+  gap: 4px;
+}
+
+#res {
+  width: 588px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+
+  /* display: none; */
+}
+
+#meter {
+  width: 100%;
+  border-radius: 0;
+}
+
+.res-text {
+  color: #48aeff;
+  text-align: center;
+}
+
+.res-text > div:nth-child(1) {
+  font-size: 28px;
+}
+
+.res-text > div:nth-child(2) {
+  font-size: 20px;
+}
+
+.reset {
+  text-align: center;
+}
