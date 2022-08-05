@@ -125,7 +125,7 @@ class DatePicker {
     return `${year}/${month}/${date}`;
   }
 
-  moveToNextMonth(event) {
+  moveToNextMonth() {
     this.#calendarDate.month++;
     if (this.#calendarDate.month > 11) {
       this.#calendarDate.month = 0;
@@ -134,7 +134,7 @@ class DatePicker {
     this.updateMonth();
     this.updateDates();
   }
-  moveToPrevMonth(event) {
+  moveToPrevMonth() {
     this.#calendarDate.month--;
     if (this.#calendarDate.month < 0) {
       this.#calendarDate.month = 11;
