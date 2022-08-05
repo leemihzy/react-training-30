@@ -1,10 +1,10 @@
 {
-  "name": "@leemihzy/301-stiker-memo",
+  "name": "@leemihzy/draggable",
   "version": "1.0.0",
   "module": "dist/Draggable.js",
   "main": "dist/Draggable.js",
   "dependencies": {
-    "@leemihzy/301-stiker-memo": "^1.0.0",
+    "@leemihzy/draggable": "^1.0.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -22,7 +22,9 @@
     "publish": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
   "babel": {
-    "presets":["@babel/preset-react"]
+    "presets": [
+      "@babel/preset-react"
+    ]
   },
   "eslintConfig": {
     "extends": [
