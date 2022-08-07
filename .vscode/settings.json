@@ -1,5 +1,6 @@
 {
   "editor.formatOnSave": true,
+  "editor.experimental.stickyScroll.enabled": true,
   "editor.codeActionOnSave": {
     "source.fixAll.eslint": true
   },

@@ -21,14 +21,6 @@ function Memo({ item, Delete, Edit, SetPosition, SetWidthHeight }) {
     () => debounce((e) => Edit(item.id, e.target.value), 500),
     [item.id, Edit]
   );
-
-  // *메모가 삭제된 후 debounce()가 일어나지 않게 처리
-  useEffect(() => {
-    return () => {
-      onChangeMemo.cancel();
-    };
-  }, [onChangeMemo]);
-
   // *entry 옵저버 여러개
   const onChangeSize = useMemo(
     () =>
@@ -54,6 +46,15 @@ function Memo({ item, Delete, Edit, SetPosition, SetWidthHeight }) {
     },
     [item.id, SetPosition]
   );
+  const onClickDelete = useCallback(() => Delete(item.id), [item.id, Delete]);
+
+  // *메모가 삭제된 후 debounce()가 일어나지 않게 처리
+  useEffect(() => {
+    return () => {
+      onChangeMemo.cancel();
+      onChangeSize.cancel();
+    };
+  }, [onChangeMemo, onChangeSize]);
 
   return (
     <Draggable handleRef={handleRef} x={0} y={0} onMove={onChangePosition}>
@@ -69,6 +70,7 @@ function Memo({ item, Delete, Edit, SetPosition, SetWidthHeight }) {
           />
           <CloseIcon
             sx={{ cursor: 'pointer', fontSize: '25px', float: 'right' }}
+            onClick={onClickDelete}
           />
         </div>
         <textarea

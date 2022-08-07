@@ -26,6 +26,7 @@ export default class MemoStore {
   memos = [];
 
   constructor() {
+    //* 함수 추가 후 action 정의 필요(브라우저 Mob Devtools에서 확인 가능)
     makeObservable(this, {
       memos: observable,
       // 변화를 주기 때문에 action 적용,
@@ -33,6 +34,7 @@ export default class MemoStore {
       editMemo: action,
       setWidthHeight: action,
       setPosition: action,
+      removeMemo: action,
     });
   }
 
@@ -58,5 +60,9 @@ export default class MemoStore {
     const index = this.getMemoIndex(id);
     this.memos[index].x = x;
     this.memos[index].y = y;
+  }
+
+  removeMemo(id) {
+    this.memos.splice(this.getMemoIndex(id), 1);
   }
 }

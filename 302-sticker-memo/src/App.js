@@ -17,6 +17,7 @@ function App({ store }) {
     (id, x, y) => store.setPosition(id, x, y),
     [store]
   );
+  const Delete = useCallback((id) => store.removeMemo(id), [store]);
 
   return (
     <div className='App'>
@@ -25,6 +26,7 @@ function App({ store }) {
           key={memo.id}
           item={memo}
           Edit={Edit}
+          Delete={Delete}
           SetWidthHeight={SetWidthHeight}
           SetPosition={SetPosition}
         />
