@@ -14,7 +14,7 @@ import { debounce } from 'underscore';
 import { observer } from 'mobx-react';
 
 function Memo({ item, Delete, Edit, SetPosition, SetWidthHeight }) {
-  console.log(item);
+  // console.log(item);
   const handleRef = useRef(null);
   const memoContainer = useRef(null);
   const onChangeMemo = useMemo(
@@ -57,10 +57,15 @@ function Memo({ item, Delete, Edit, SetPosition, SetWidthHeight }) {
   }, [onChangeMemo, onChangeSize]);
 
   return (
-    <Draggable handleRef={handleRef} x={0} y={0} onMove={onChangePosition}>
+    <Draggable
+      handleRef={handleRef}
+      x={item.x}
+      y={item.y}
+      onMove={onChangePosition}
+    >
       <div
         className='memo-container'
-        style={{ width: `${250}px`, height: `${300}px` }}
+        style={{ width: `${item.width}px`, height: `${item.height}px` }}
         ref={memoContainer}
       >
         <div className='menu'>
