@@ -1497,35 +1497,6 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@leemihzy/301-stiker-memo@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@leemihzy/301-stiker-memo/-/301-stiker-memo-1.0.0.tgz#b11cea717d398482de457cc9b100c9d6c8e23c93"
-  integrity sha512-JiaWNSisLViM+aniu9tDW24D7+bWKjo29EPQofIObowI8vZskKqR4ykQLHxyXZnez/M+jT1Gib5MBqGDLAMw9g==
-  dependencies:
-    "@testing-library/jest-dom" "^5.14.1"
-    "@testing-library/react" "^13.0.0"
-    "@testing-library/user-event" "^13.2.1"
-    react "^18.2.0"
-    react-dom "^18.2.0"
-    react-scripts "5.0.1"
-    underscore "^1.13.4"
-    web-vitals "^2.1.0"
-
-"@leemihzy/draggable@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@leemihzy/draggable/-/draggable-1.0.0.tgz#47c70c8a5d7da55ced62cc90a8c6c380670e7883"
-  integrity sha512-QgzdgfLzYRdoLhDKLQaV0ym1TAHe5mPXI9nje/usnCglcM5gkM4ML97wKG/AdMCA0Ti8pfo//d6TOOi+MA96Bw==
-  dependencies:
-    "@leemihzy/301-stiker-memo" "^1.0.0"
-    "@testing-library/jest-dom" "^5.14.1"
-    "@testing-library/react" "^13.0.0"
-    "@testing-library/user-event" "^13.2.1"
-    react "^18.2.0"
-    react-dom "^18.2.0"
-    react-scripts "5.0.1"
-    underscore "^1.13.4"
-    web-vitals "^2.1.0"
-
 "@leichtgewicht/ip-codec@^2.0.1":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@leichtgewicht/ip-codec/-/ip-codec-2.0.4.tgz#b2ac626d6cb9c8718ab459166d4bb405b8ffa78b"
