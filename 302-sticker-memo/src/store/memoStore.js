@@ -1,4 +1,4 @@
-import { makeObservable, observable, action } from 'mobx';
+import { makeObservable, observable, action, autorun } from 'mobx';
 import { v1 as uuidv1 } from 'uuid';
 
 export class MemoModel {
@@ -22,7 +22,8 @@ export class MemoModel {
 }
 
 export default class MemoStore {
-  // id = 'memoStore';
+  id = 'memoStore';
+  localStorage = null;
   memos = [];
 
   constructor() {
@@ -35,6 +36,16 @@ export default class MemoStore {
       setWidthHeight: action,
       setPosition: action,
       removeMemo: action,
+      loadLocalStorage: action,
+    });
+
+    this.initLocalStorage();
+
+    // localStorage에 저장하기(변화가 일어날 때마다 저장)
+    autorun(() => {
+      if (this.localStorage !== null) {
+        this.localStorage.setItem(this.id, JSON.stringify(this.memos));
+      }
     });
   }
 
@@ -64,5 +75,22 @@ export default class MemoStore {
 
   removeMemo(id) {
     this.memos.splice(this.getMemoIndex(id), 1);
+  }
+
+  // localStorage 불러오기(init)
+  initLocalStorage() {
+    if (window.localStorage[this.id] == null) {
+      // localStorage에 저장되있는 게 없으면(식별자에 해당하는 게 없으면) mapping만
+      this.localStorage = window.localStorage;
+      this.localStorage.setItem(this.id, JSON.stringify(this.memos.shift()));
+    } else {
+      // 식별자에 해당하는 게 있으면 mapping + 저장되있던 것 로드하기
+      this.localStorage = window.localStorage;
+      this.loadLocalStorage();
+    }
+  }
+
+  loadLocalStorage() {
+    this.memos = JSON.parse(this.localStorage.getItem(this.id));
   }
 }
