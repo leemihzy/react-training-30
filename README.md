@@ -12,4 +12,4 @@
 | 105-bmi-calculator  | bmi 계산기 |  |
 | 106-image-gallery  | 이미지 갤러리  | `React` `react-dropzone` |
 | 301-draggable  |   draggable 기능          |     `React` `underscore` `@leemihzy/draggable` (모듈 생성 및 배포)     |
-| 302-sticker-memo  |   스티커 메모   |  `React` `mobx` `underscore` `uuid` `node-sass` `@mui/material` `@leemihzy/draggable`    |
+| 302-sticker-memo  |   스티커 메모   |  `React` `mobx` `underscore` `uuid` `node-sass` `@mui/material` `@leemihzy/draggable` `localStorage`    |
