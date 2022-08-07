@@ -26,7 +26,7 @@ function App({ store }) {
           item={memo}
           Edit={Edit}
           SetWidthHeight={SetWidthHeight}
-          setPosition={SetPosition}
+          SetPosition={SetPosition}
         />
       ))}
       <AddIcon
