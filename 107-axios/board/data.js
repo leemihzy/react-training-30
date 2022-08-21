@@ -1,5 +1,5 @@
 // 반환한 결과값을 저장하는 변수(저장소) -> 변수를 통해서 도구 사용가능
-const container = document.getElementById('root');
+const container = document.getElementById('notice');
 const ajax = new XMLHttpRequest();
 const content = document.createElement('div');
 const NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
